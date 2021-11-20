@@ -105,4 +105,4 @@ for i in get_data:
     list_results.append(goal_data)
     print(f'{count}. {goal_data}')
     df = pd.DataFrame(list_results)
-    df.to_csv(f'sample_bulkbookstore.csv', index=False)
+    df.to_csv(f'results.csv', index=False)
