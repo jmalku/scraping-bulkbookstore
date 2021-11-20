@@ -80,8 +80,8 @@ for i in get_data:
                 discount = data[0]['discount']['value']
                 min = data[0]['min']
                 max = data[0]['max']
-                potongan = float(price) * int(discount) / 100
-                hitung = float(price) - float(potongan)
+                dscont = float(price) * int(discount) / 100
+                calculate = float(price) - float(dscont)
 
 
                 def normal_round(n, decimals=0):
@@ -91,7 +91,7 @@ for i in get_data:
                     return math.ceil(expoN) / 10 ** decimals
 
 
-                newRounding = normal_round(hitung, 2)
+                newRounding = normal_round(calculate, 2)
                 prices = f'{newRounding:.2f}'
     else:
         prices = prices
@@ -106,5 +106,3 @@ for i in get_data:
     print(f'{count}. {goal_data}')
     df = pd.DataFrame(list_results)
     df.to_csv(f'sample_bulkbookstore.csv', index=False)
-    # with open('sample_bulkbookstore.json', 'a') as json_file:
-    #     json.dump(list_results, json_file)
